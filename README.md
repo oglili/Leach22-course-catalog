@@ -7,7 +7,7 @@
     </a>
    </p>
   
-  <h3 align="center">Bonny State Bonuses</h3>
+  <h3 align="center">Leach22 Course Catalog</h3>
 
   <p align="center">
      A project developed in Laravel and MySQL that includes two functionalities: a REST API and a web app.
