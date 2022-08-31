@@ -3,7 +3,7 @@
 
   <p align="center">
     <a href="https://github.com/oglili/Leach22-course-catalog">
-        <img src="public/images/favicon.png" alt="Logo" width= "200" height = "200">
+        <img src="/client/src/assets/images/logo.svg" alt="Logo" width= "200" height = "200">
     </a>
    </p>
   
