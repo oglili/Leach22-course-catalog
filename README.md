@@ -110,25 +110,19 @@ REST API project section endpoints:
 <h3 align="center">Preview</h3>
 
   <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
-    <img src="public/screenshots/overview.png" alt="site-homepage-overview">
+    <img src="client/src/assets/images/leach22h_landing.png" alt="site-homepage">
   </a>
 
   <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
-    <img src="public/screenshots/bonuses-table.png" alt="site-bonuses-table">
+    <img src="client/src/assets/images/leach22h_stats.png" alt="site-stats">
   </a>
 
-  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
-    <img src="public/screenshots/create-category.png" alt="site-create-category">
-  </a>
-
-
+  
 ## License
 
 Distributed  the MIT License. See `LICENSE` for more information.
 
 ## Links & Contacts
-
-[@Aurora Sirigu](https://www.linkedin.com/in/aurora-sirigu-a001301b4/) - 93a.sirigu at gmail dot com
 
 Project Repository: [bonny-state-bonuses-laravel](https://github.com/Auro-93/bonny-state-bonuses-laravel)
 
