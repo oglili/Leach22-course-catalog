@@ -43,37 +43,6 @@
 ## About The Project
 In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database and React to create the frontend user interface.
 
-User can perform various actions:
-
-<ul>
-<li><strong>GET</strong> requests to access bonuses and categories </li>
-<li><strong>GET</strong> requests with params to filter bonuses by category and sale data range; </li>
-<li><strong>GET</strong> requests to access aggregate data about categories such as total, max and min saved minutes</li>
-<li><strong>POST</strong> requests to create bonuses and categories; </li>
-<li><strong>PUT</strong> requests to update bonuses and categories; </li>
-<li><strong>DELETE</strong> requests to delete bonuses and categories; </li>
-</ul>
-
-REST API project section endpoints:
-
-<ul>
-<li><strong>GET</strong> /bonuses</li>
-<li><strong>GET</strong> /bonuses/{id}</li>
-<li><strong>POST</strong> /bonuses/store</li>
-<li><strong>PUT</strong> /bonuses/{id}/update</li>
-<li><strong>DELETE</strong> /bonuses/{id}/delete</li>
-
-<li><strong>GET</strong> /categories</li>
-<li><strong>GET</strong> /categories/{id}</li>
-<li><strong>POST</strong> /categories/store</li>
-<li><strong>PUT</strong> /categories/{id}/update</li>
-<li><strong>DELETE</strong> /categories/{id}/delete</li>
-
-<li><strong>GET</strong> /categories/aggregate/max-saved-minutes</li>
-<li><strong>GET</strong> /categories/aggregate/min-saved-minutes</li>
-<li><strong>GET</strong> /categories/aggregate/total-saved-minutes</li>
-</ul>
-
 ### Some Technologies Used
 
 -   [Node.js](https://nodejs.org/en/)
@@ -95,65 +64,45 @@ You use it for your project by following the Installation or Use App to use the 
 1. Clone the repository locally with the git command:
 
     ```sh
-    git clone https://github.com/Auro-93/bonny-state-bonuses-laravel.git
+    git clone https://github.com/oglili/Leach22-course-catalog.git
     ```
-
-2. Switch to the project folder:
-
+2. Open the package.json to install the dependencies in the client and main folder:
     ```sh
-    cd bonny-state-bonuses-laravel
-    ```
+    "scripts": {
+        "build-client": "cd client && npm run build",
+        "install-client": "cd client && npm install",
+        "server": "nodemon server --ignore client",
+        "client": "npm start --prefix client",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \" npm run client\""
+      }
 
-3. Install composer dependencies:
+       ```
 
-    ```sh
-    composer install
-    ```
+3. Create your database with MongoDB/Mongoose & JWT 
 
-4. Install NPM Dependencies:
+4. Create your .env file with your database & JWT credentials 
 
-    ```sh
-    npm install
-    ```
+You can now access the server at http://localhost:5000
 
-5. Copy the example env file and make the required configuration changes in the .env file:
+REST API project section endpoints:
 
-```sh
- cp .env.example .env
-```
+<ul>
+<li><strong>GET</strong> /bonuses</li>
+<li><strong>GET</strong> /bonuses/{id}</li>
+<li><strong>POST</strong> /bonuses/store</li>
+<li><strong>PUT</strong> /bonuses/{id}/update</li>
+<li><strong>DELETE</strong> /bonuses/{id}/delete</li>
 
-6.  Generate an app encryption key:
+<li><strong>GET</strong> /categories</li>
+<li><strong>GET</strong> /categories/{id}</li>
+<li><strong>POST</strong> /categories/store</li>
+<li><strong>PUT</strong> /categories/{id}/update</li>
+<li><strong>DELETE</strong> /categories/{id}/delete</li>
 
-```sh
- php artisan key:generate
-```
-
-7.  Create an empty database for our application with your preferred tools (ex. phpMyAdmin or MySQL Workbench)
-
-8.  In the .env file, add database information to allow Laravel to connect to the database
-
-    In the .env file fill in the DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, and DB_PASSWORD options to match the credentials of the database you just created.
-
-
-9.  Migrate the database
-
-```sh
- php artisan migrate
-```
-
-10. Seed the database with dummy data to test the app faster (optional):
-
-```sh
- php artisan db:seed
-```
-
-11. Start the local development server:
-
-```sh
-   php artisan serve
-```
-
-You can now access the server at http://localhost:8000
+<li><strong>GET</strong> /categories/aggregate/max-saved-minutes</li>
+<li><strong>GET</strong> /categories/aggregate/min-saved-minutes</li>
+<li><strong>GET</strong> /categories/aggregate/total-saved-minutes</li>
+</ul>
 
 ### Use App
 
