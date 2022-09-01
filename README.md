@@ -36,7 +36,8 @@
       </ul>
     </li>
     <li><a href="#license">License</a></li>
-    <li><a href="#links">Links</a></li>   
+    <li><a href="#links">Links</a></li>
+    <li><a href="#contributing">Contributing</a></li>    
   </ol>
 </details>
 
@@ -108,11 +109,13 @@ REST API project section endpoints:
 
 <h3 align="center">Preview</h3>
 
-  <a href="https://leach22-course-catalog.herokuapp.com/">
+  <a href="https://github.com/oglili/Leach22-course-catalog">
     <img src="client/src/assets/images/leach22h_landing.png" alt="site-homepage">
   </a>
+  <br>
+  <br>
 
-  <a href="https://leach22-course-catalog.herokuapp.com/">
+  <a href="https://github.com/oglili/Leach22-course-catalog">
     <img src="client/src/assets/images/leach22h_stats.png" alt="site-stats">
   </a>
 
@@ -126,3 +129,7 @@ Distributed  the MIT License. See `LICENSE` for more information.
 Project Repository: [leach22-course-catalog](https://github.com/oglili/Leach22-course-catalog)
 
 Project Website: [leach22-course-catalog - Heroku](https://leach22-course-catalog.herokuapp.com/)
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
