@@ -23,7 +23,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#some-technologies-used">Some Technologies Used</a></li>
       </ul>
     </li>
     <li>
@@ -73,12 +73,15 @@ REST API project section endpoints:
 <li><strong>GET</strong> /categories/aggregate/total-saved-minutes</li>
 </ul>
 
-### Built With
+### Some Technologies Used
 
--   [Laravel](https://laravel.com/)
--   [MySQL](https://www.mysql.com/)
--   [SASS](https://sass-lang.com/)
--   [Tailwind CSS](https://tailwindcss.com/)
+-   [Node.js](https://nodejs.org/en/)
+-   [Express js](https://expressjs.com/)
+-   [MongoDB/Mongoose](https://mongoosejs.com/)
+-   [Normalize CSS](https://necolas.github.io/normalize.css/)
+-   [Styled Components](https://styled-components.com/)
+-   [JWT](https://jwt.io/)
+-   [Bcrypt.js](https://www.npmjs.com/package/bcryptjs)
 
 ## Getting Started
 
