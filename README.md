@@ -103,7 +103,7 @@ REST API project section endpoints:
 
 ### Use App
 
-- Open https://leach22-course-catalog.herokuapp.com/landing
+- Open https://leach22-course-catalog.herokuapp.com/
 - Register/Login
 - Start adding, editing, deleting courses and viewing all courses in the piattaform.
 
@@ -132,7 +132,7 @@ Distributed  the MIT License. See `LICENSE` for more information.
 
 Project Repository: [bonny-state-bonuses-laravel](https://github.com/Auro-93/bonny-state-bonuses-laravel)
 
-Project Website: [leach22-course-catalog - Heroku](https://leach22-course-catalog.herokuapp.com/landing)
+Project Website: [leach22-course-catalog - Heroku](https://leach22-course-catalog.herokuapp.com/)
 
 Portfolio: [aurodev-web-developer-portfolio](https://aurodev-web-developer-portfolio.netlify.app/)
 
