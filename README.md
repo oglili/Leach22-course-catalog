@@ -124,7 +124,7 @@ REST API project section endpoints:
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed  the MIT License. See `LICENSE` for more information.
 
 ## Links & Contacts
 
