@@ -31,6 +31,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#use-app">Use App</a></li>
       </ul>
     </li>
     <li><a href="#license">License</a></li>
@@ -87,7 +88,7 @@ REST API project section endpoints:
 
 ### Prerequisites
 
-Please check the official laravel installation guide for requirements before you start. [Official Documentation](https://laravel.com/docs/9.x/installation)
+You use it for your project by following the Installation or Use App to use the app.
 
 ### Installation
 
@@ -153,6 +154,10 @@ Please check the official laravel installation guide for requirements before you
 ```
 
 You can now access the server at http://localhost:8000
+
+### Use App
+
+
 
 <h3 align="center">Preview</h3>
 
