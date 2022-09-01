@@ -31,6 +31,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#test">Test</a></li>
         <li><a href="#use-app">Use App</a></li>
       </ul>
     </li>
@@ -86,25 +87,22 @@ You can now access the server at http://localhost:5000
 
 REST API project section endpoints:
 
-<ul>
-<li><strong>GET</strong> /bonuses</li>
-<li><strong>GET</strong> /bonuses/{id}</li>
-<li><strong>POST</strong> /bonuses/store</li>
-<li><strong>PUT</strong> /bonuses/{id}/update</li>
-<li><strong>DELETE</strong> /bonuses/{id}/delete</li>
+- `POST /api/v1/auth/register` - To register a user.
+- `POST /api/v1/auth/login` - To login a registered user.
+- `PATCH /api/v1/auth/updateUser` - To update a user.
+- `GET /api/v1/courses` - Returns all courses of the current user.   
+- `GET /api/v1/courses/stats` - Returns all course showing statistics.
+- `GET /api/v1/courses/total` - Returns all courses.
+- `POST /api/v1/courses` - Creates a course.
+- `PATCH /api/v1/courses/:id` - Updates a course specifying the id.
+- `DELETE /api/v1/courses/:id` - Deletes a course specifying the id.
 
-<li><strong>GET</strong> /categories</li>
-<li><strong>GET</strong> /categories/{id}</li>
-<li><strong>POST</strong> /categories/store</li>
-<li><strong>PUT</strong> /categories/{id}/update</li>
-<li><strong>DELETE</strong> /categories/{id}/delete</li>
+### Test
 
-<li><strong>GET</strong> /categories/aggregate/max-saved-minutes</li>
-<li><strong>GET</strong> /categories/aggregate/min-saved-minutes</li>
-<li><strong>GET</strong> /categories/aggregate/total-saved-minutes</li>
-</ul>
+- Postman can be used to test the REST API.
 
 ### Use App
+
 
 
 
