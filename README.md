@@ -109,11 +109,11 @@ REST API project section endpoints:
 
 <h3 align="center">Preview</h3>
 
-  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
+  <a href="https://leach22-course-catalog.herokuapp.com/">
     <img src="client/src/assets/images/leach22h_landing.png" alt="site-homepage">
   </a>
 
-  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
+  <a href="https://leach22-course-catalog.herokuapp.com/">
     <img src="client/src/assets/images/leach22h_stats.png" alt="site-stats">
   </a>
 
@@ -122,17 +122,8 @@ REST API project section endpoints:
 
 Distributed  the MIT License. See `LICENSE` for more information.
 
-## Links & Contacts
+## Links
 
-Project Repository: [bonny-state-bonuses-laravel](https://github.com/Auro-93/bonny-state-bonuses-laravel)
+Project Repository: [leach22-course-catalog](https://github.com/Auro-93/bonny-state-bonuses-laravel)
 
 Project Website: [leach22-course-catalog - Heroku](https://leach22-course-catalog.herokuapp.com/)
-
-Portfolio: [aurodev-web-developer-portfolio](https://aurodev-web-developer-portfolio.netlify.app/)
-
-## Acknowledgements
-
--   [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
--   [Awesome README](https://github.com/matiassingers/awesome-readme)
--   [Laravel](https://laravel.com/)
--   [Tailwind CSS](https://tailwindcss.com/)
