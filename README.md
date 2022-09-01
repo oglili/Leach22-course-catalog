@@ -10,29 +10,12 @@
   <h3 align="center">Leach22 Course Catalog</h3>
 
   <p align="center">
-     A project developed in Laravel and MySQL that includes two functionalities: a REST API and a web app.
-    Bonny is a fictional startup whose aim is to make state bonuses more accessible to citizens.
-    The application allows the user to access / filter / create / update / delete state bonuses and the categories to which they belong.
-  </p>
-
-  <br>
-  <br>
-
-  <h3 align="center">Preview</h3>
-
-  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
-    <img src="public/screenshots/overview.png" alt="site-homepage-overview">
-  </a>
-
-  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
-    <img src="public/screenshots/bonuses-table.png" alt="site-bonuses-table">
-  </a>
-
-  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
-    <img src="public/screenshots/create-category.png" alt="site-create-category">
-  </a>
-
+     Leach22 is a UN goal-based training platform that will need to catalog the courses it will offer. 
 </p>
+
+  <br>
+  <br>
+
 
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
@@ -57,6 +40,7 @@
 </details>
 
 ## About The Project
+In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database and React to create the frontend user interface.
 
 User can perform various actions:
 
@@ -166,6 +150,21 @@ Please check the official laravel installation guide for requirements before you
 ```
 
 You can now access the server at http://localhost:8000
+
+<h3 align="center">Preview</h3>
+
+  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
+    <img src="public/screenshots/overview.png" alt="site-homepage-overview">
+  </a>
+
+  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
+    <img src="public/screenshots/bonuses-table.png" alt="site-bonuses-table">
+  </a>
+
+  <a href="https://github.com/Auro-93/bonny-state-bonuses-laravel">
+    <img src="public/screenshots/create-category.png" alt="site-create-category">
+  </a>
+
 
 ## License
 
