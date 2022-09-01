@@ -124,6 +124,6 @@ Distributed  the MIT License. See `LICENSE` for more information.
 
 ## Links
 
-Project Repository: [leach22-course-catalog](https://github.com/Auro-93/bonny-state-bonuses-laravel)
+Project Repository: [leach22-course-catalog](https://github.com/oglili/Leach22-course-catalog)
 
 Project Website: [leach22-course-catalog - Heroku](https://leach22-course-catalog.herokuapp.com/)
