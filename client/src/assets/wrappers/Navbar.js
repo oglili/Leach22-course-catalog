@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Wrapper = styled.nav`
   height: var(--nav-height);
@@ -66,6 +66,11 @@ const Wrapper = styled.nav`
     display: none;
     margin: 0;
   }
+  @media (max-width: 576px) {
+    .hide {
+      display: none;
+    }
+  }
   @media (min-width: 992px) {
     position: sticky;
     top: 0;
@@ -80,5 +85,5 @@ const Wrapper = styled.nav`
       display: block;
     }
   }
-`
-export default Wrapper
+`;
+export default Wrapper;

@@ -18,6 +18,7 @@ const Navbar = () => {
           <Logo />
           <Logos />
         </div>
+        {user.admin ? <button className='btn hide'>Admin</button> : ''}
         <div className='btn-container'>
           <button className='btn' onClick={() => setShowLogout(!showLogout)}>
             <FaUserCircle />

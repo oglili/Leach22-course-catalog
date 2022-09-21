@@ -15,10 +15,10 @@ function Landing() {
             Course <span>Catalog</span>
           </h1>
           <p>
-            Leach22 - a UN goal-based training platform. This app provides a way
-            for insertion of the courses offered by the platform into the
-            database. As a User you can retrieve a list of all the courses, as
-            well as add, update and delete courses you created.
+            Leach22 - a UN goal-based training platform. Register/Log in to
+            check the available courses. As a registered User you can register
+            for an available course, as well as update and delete your
+            registration.
           </p>
           <Link to='/register' className='btn btn-hero'>
             Login/Register

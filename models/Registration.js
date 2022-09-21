@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
+import validator from 'validator';
 
-const CourseSchema = new mongoose.Schema(
+const RegistrationSchema = new mongoose.Schema(
   {
     name: {
       type: String,
@@ -26,10 +27,28 @@ const CourseSchema = new mongoose.Schema(
       ],
       default: 'University of Verona',
     },
-    courseLocation: {
+    birthdate: {
+      type: Date,
+      default: '2000-01-01',
+    },
+    gender: {
       type: String,
-      default: 'my city',
-      required: true,
+      enum: ['Male', 'Female'],
+      default: 'Male',
+    },
+    address: {
+      type: String,
+      required: [true, 'Please provide address'],
+    },
+    phoneNr: {
+      type: String,
+      trim: true,
+      validate: {
+        validator: validator.isMobilePhone,
+        message: 'is not a valid digit number!',
+      },
+      default: '+393890966530',
+      unique: true,
     },
     createdBy: {
       type: mongoose.Types.ObjectId,
@@ -40,4 +59,4 @@ const CourseSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model('Course', CourseSchema);
+export default mongoose.model('Registration', RegistrationSchema);

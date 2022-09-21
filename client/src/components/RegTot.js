@@ -1,18 +1,27 @@
 import moment from 'moment';
 import { FaLocationArrow, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
+import { MdPlace } from 'react-icons/md';
+import { FcPhone } from 'react-icons/fc';
+import { HiOutlineCalendar } from 'react-icons/hi';
 import Wrapper from '../assets/wrappers/Course';
 import CourseInfo from './CourseInfo';
 
-const CourseTot = ({
+const RegTot = ({
   _id,
   name,
-  courseLocation,
   type,
   university,
+  birthdate,
+  gender,
+  address,
+  phoneNr,
   createdAt,
 }) => {
   let date = moment(createdAt);
   date = date.format('MMM Do, YYYY');
+  let birthday = moment(birthdate);
+  birthday = birthday.format('MMM Do, YYYY');
+
   return (
     <Wrapper>
       <header>
@@ -23,9 +32,12 @@ const CourseTot = ({
       </header>
       <div className='content'>
         <div className='content-center'>
-          <CourseInfo icon={<FaLocationArrow />} text={courseLocation} />
-          <CourseInfo icon={<FaCalendarAlt />} text={date} />
           <CourseInfo icon={<FaBriefcase />} text={university} />
+          <CourseInfo icon={<FaLocationArrow />} text={gender} />
+          <CourseInfo icon={<HiOutlineCalendar />} text={birthday} />
+          <CourseInfo icon={<MdPlace />} text={address} />
+          <CourseInfo icon={<FcPhone />} text={phoneNr} />
+          <CourseInfo icon={<FaCalendarAlt />} text={date} />
           <div className={`univ ${type}`}>{type}</div>
         </div>
       </div>
@@ -33,4 +45,4 @@ const CourseTot = ({
   );
 };
 
-export default CourseTot;
+export default RegTot;

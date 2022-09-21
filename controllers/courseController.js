@@ -10,7 +10,6 @@ const createCourse = async (req, res) => {
   if (!name) {
     throw new BadRequestError('Please Provide All Values');
   }
-
   req.body.createdBy = req.user.userId;
 
   const course = await Course.create(req.body);
@@ -55,9 +54,10 @@ const getCourses = async (req, res) => {
 
   result = result.skip(skip).limit(limit);
 
-  const courses = await result;
-
-  const totalCourses = await Course.countDocuments(queryObject);
+  const [courses, totalCourses] = await Promise.all([
+    result,
+    Course.countDocuments(queryObject),
+  ]);
   const numOfPages = Math.ceil(totalCourses / limit);
   res.status(StatusCodes.OK).json({ courses, totalCourses, numOfPages });
 };
@@ -98,9 +98,10 @@ const getCoursesTot = async (req, res) => {
 
   result = result.skip(skip).limit(limit);
 
-  const courses = await result;
-
-  const totalCourses = await Course.countDocuments(queryObject);
+  const [courses, totalCourses] = await Promise.all([
+    result,
+    Course.countDocuments(queryObject),
+  ]);
   const numOfPages = Math.ceil(totalCourses / limit);
   res.status(StatusCodes.OK).json({ courses, totalCourses, numOfPages });
 };
@@ -137,7 +138,7 @@ const deleteCourse = async (req, res) => {
   const { id: courseId } = req.params;
   const course = await Course.findOne({ _id: courseId });
   if (!course) {
-    throw new CustomError.NotFoundError(`No job with id : ${courseId}`);
+    throw new CustomError.NotFoundError(`No course with id : ${courseId}`);
   }
   checkPermissions(req.user, course.createdBy);
   await course.remove();
@@ -146,7 +147,6 @@ const deleteCourse = async (req, res) => {
 
 const showStats = async (req, res) => {
   let stats = await Course.aggregate([
-    { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
     { $group: { _id: '$type', count: { $sum: 1 } } },
   ]);
 
@@ -163,7 +163,6 @@ const showStats = async (req, res) => {
   };
 
   let statsUniv = await Course.aggregate([
-    { $match: { createdBy: mongoose.Types.ObjectId(req.user.userId) } },
     { $group: { _id: '$university', count: { $sum: 1 } } },
   ]);
 

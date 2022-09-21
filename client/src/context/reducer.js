@@ -25,6 +25,16 @@ import {
   SHOW_STATS_SUCCESS,
   CLEAR_FILTERS,
   CHANGE_PAGE,
+  CREATE_REGISTER_BEGIN,
+  CREATE_REGISTER_SUCCESS,
+  CREATE_REGISTER_ERROR,
+  GET_REGISTER_BEGIN,
+  GET_REGISTER_SUCCESS,
+  DELETE_REGISTER_BEGIN,
+  SET_EDIT_REGISTER,
+  EDIT_REGISTER_BEGIN,
+  EDIT_REGISTER_SUCCESS,
+  EDIT_REGISTER_ERROR,
 } from './actions';
 import { initialState } from './appContext';
 
@@ -216,6 +226,82 @@ const reducer = (state, action) => {
   }
   if (action.type === CHANGE_PAGE) {
     return { ...state, page: action.payload.page };
+  }
+
+  if (action.type === CREATE_REGISTER_BEGIN) {
+    return { ...state, isLoading: true };
+  }
+  if (action.type === CREATE_REGISTER_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: 'success',
+      alertText: 'New Registration Created!',
+    };
+  }
+  if (action.type === CREATE_REGISTER_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: 'danger',
+      alertText: action.payload.msg,
+    };
+  }
+  if (action.type === GET_REGISTER_BEGIN) {
+    return { ...state, isLoading: true, showAlert: false };
+  }
+  if (action.type === GET_REGISTER_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      reg: action.payload.reg,
+      totalReg: action.payload.totalReg,
+      numOfPages: action.payload.numOfPages,
+    };
+  }
+  if (action.type === SET_EDIT_REGISTER) {
+    const registers = state.reg.find(
+      (register) => register._id === action.payload.id
+    );
+    const { _id, name, university, type, address, birthdate, phoneNr } =
+      registers;
+    return {
+      ...state,
+      isEditing: true,
+      editRegId: _id,
+      name,
+      university,
+      type,
+      address,
+      birthdate,
+      phoneNr,
+    };
+  }
+  if (action.type === DELETE_REGISTER_BEGIN) {
+    return { ...state, isLoading: true };
+  }
+  if (action.type === EDIT_REGISTER_BEGIN) {
+    return { ...state, isLoading: true };
+  }
+  if (action.type === EDIT_REGISTER_SUCCESS) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: 'success',
+      alertText: 'Registration Updated!',
+    };
+  }
+  if (action.type === EDIT_REGISTER_ERROR) {
+    return {
+      ...state,
+      isLoading: false,
+      showAlert: true,
+      alertType: 'danger',
+      alertText: action.payload.msg,
+    };
   }
 
   throw new Error(`no such action :${action.type}`);

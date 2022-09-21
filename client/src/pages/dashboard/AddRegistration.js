@@ -2,45 +2,50 @@ import { FormRow, FormRowSelect, Alert } from '../../components';
 import { useAppContext } from '../../context/appContext';
 import Wrapper from '../../assets/wrappers/DashboardFormPage';
 
-const AddCourse = () => {
+const AddRegistration = () => {
   const {
     isLoading,
     isEditing,
     showAlert,
     displayAlert,
     name,
-    courseLocation,
     type,
     typeOptions,
     university,
     univOptions,
+    birthdate,
+    gender,
+    genderOptions,
+    address,
+    phoneNr,
     handleChange,
     clearValues,
-    createCourse,
-    editCourse,
+    createRegistration,
+    editRegistration,
   } = useAppContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name || !courseLocation) {
+    if (!name || !address) {
       displayAlert();
       return;
     }
     if (isEditing) {
-      editCourse();
+      editRegistration();
       return;
     }
-    createCourse();
+    createRegistration();
   };
 
-  const handleCourseInput = (e) => {
+  const handleRegInput = (e) => {
     handleChange({ name: e.target.name, value: e.target.value });
   };
 
   return (
     <Wrapper>
       <form className='form'>
-        <h3>{isEditing ? 'edit course' : 'add course'} </h3>
+        <h2>Student Registration Form</h2>
+        <h3>{isEditing ? 'edit registration' : 'add registration'} </h3>
         {showAlert && <Alert />}
 
         {/* name */}
@@ -49,21 +54,12 @@ const AddCourse = () => {
             type='text'
             name='name'
             value={name}
-            handleChange={handleCourseInput}
-          />
-
-          {/* location */}
-          <FormRow
-            type='text'
-            labelText='course location'
-            name='courseLocation'
-            value={courseLocation}
-            handleChange={handleCourseInput}
+            handleChange={handleRegInput}
           />
           <FormRowSelect
             name='type'
             value={type}
-            handleChange={handleCourseInput}
+            handleChange={handleRegInput}
             list={typeOptions}
           />
 
@@ -72,8 +68,38 @@ const AddCourse = () => {
             labelText='university'
             name='university'
             value={university}
-            handleChange={handleCourseInput}
+            handleChange={handleRegInput}
             list={univOptions}
+          />
+          <FormRowSelect
+            name='gender'
+            value={gender}
+            handleChange={handleRegInput}
+            list={genderOptions}
+          />
+          {/* birthdate */}
+          <FormRow
+            type='date'
+            labelText='birthdate'
+            name='birthdate'
+            value={birthdate}
+            handleChange={handleRegInput}
+          />
+          {/* address */}
+          <FormRow
+            type='text'
+            labelText='address'
+            name='address'
+            value={address}
+            handleChange={handleRegInput}
+          />
+          {/* phoneNr */}
+          <FormRow
+            type='text'
+            labelText='phone number'
+            name='phoneNr'
+            value={phoneNr}
+            handleChange={handleRegInput}
           />
           {/* submit button */}
           <div className='btn-container'>
@@ -101,4 +127,4 @@ const AddCourse = () => {
   );
 };
 
-export default AddCourse;
+export default AddRegistration;

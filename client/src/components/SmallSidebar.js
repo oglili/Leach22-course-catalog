@@ -3,9 +3,10 @@ import { FaTimes } from 'react-icons/fa';
 import { useAppContext } from '../context/appContext';
 import Logo from './Logo';
 import NavLinks from './NavLinks';
+import NavLinkUsers from './NavLinkUsers';
 
 export const SmallSidebar = () => {
-  const { showSidebar, toggleSidebar } = useAppContext();
+  const { user, showSidebar, toggleSidebar } = useAppContext();
   return (
     <Wrapper>
       <div
@@ -21,7 +22,11 @@ export const SmallSidebar = () => {
             <header>
               <Logo />
             </header>
-            <NavLinks toggleSidebar={toggleSidebar} />
+            {user.admin ? (
+              <NavLinks toggleSidebar={toggleSidebar} />
+            ) : (
+              <NavLinkUsers toggleSidebar={toggleSidebar} />
+            )}
           </div>
         </div>
       </div>

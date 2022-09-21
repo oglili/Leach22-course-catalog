@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { links } from '../utils/links';
+import { linkUsers } from '../utils/links';
 
-const NavLinks = ({ toggleSidebar }) => {
+const NavLinkUsers = ({ toggleSidebar }) => {
   return (
     <div className='nav-links'>
-      {links.map((link) => {
+      {linkUsers.map((link) => {
         const { text, path, id, icon } = link;
 
         return (
@@ -25,4 +25,4 @@ const NavLinks = ({ toggleSidebar }) => {
   );
 };
 
-export default NavLinks;
+export default NavLinkUsers;

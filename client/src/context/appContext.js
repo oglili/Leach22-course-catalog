@@ -29,6 +29,16 @@ import {
   SHOW_STATS_SUCCESS,
   CLEAR_FILTERS,
   CHANGE_PAGE,
+  CREATE_REGISTER_BEGIN,
+  CREATE_REGISTER_SUCCESS,
+  CREATE_REGISTER_ERROR,
+  GET_REGISTER_BEGIN,
+  GET_REGISTER_SUCCESS,
+  DELETE_REGISTER_BEGIN,
+  SET_EDIT_REGISTER,
+  EDIT_REGISTER_BEGIN,
+  EDIT_REGISTER_SUCCESS,
+  EDIT_REGISTER_ERROR,
 } from './actions';
 
 const token = localStorage.getItem('token');
@@ -59,8 +69,16 @@ export const initialState = {
     'University of Sicilia',
   ],
   courseLocation: userLocation || '',
+  editRegId: '',
+  birthdate: '2000-01-01',
+  gender: 'Male',
+  genderOptions: ['Male', 'Female'],
+  address: '',
+  phoneNr: '+393890966530',
   courses: [],
   totalCourses: 0,
+  reg: [],
+  totalReg: 0,
   numOfPages: 1,
   page: 1,
   stats: {},
@@ -333,6 +351,121 @@ const AppProvider = ({ children }) => {
     dispatch({ type: CHANGE_PAGE, payload: { page } });
   };
 
+  const createRegistration = async () => {
+    dispatch({ type: CREATE_REGISTER_BEGIN });
+    try {
+      const { name, type, university, address, phoneNr, birthdate, gender } =
+        state;
+
+      await authFetch.post('/reg', {
+        name,
+        type,
+        university,
+        address,
+        phoneNr,
+        birthdate,
+        gender,
+      });
+      dispatch({
+        type: CREATE_REGISTER_SUCCESS,
+      });
+
+      dispatch({ type: CLEAR_VALUES });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: CREATE_REGISTER_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
+  };
+
+  const getRegistrations = async () => {
+    let url = `/reg`;
+
+    dispatch({ type: GET_REGISTER_BEGIN });
+    try {
+      const { data } = await authFetch(url);
+      const { reg, totalReg, numOfPages } = data;
+      dispatch({
+        type: GET_REGISTER_SUCCESS,
+        payload: {
+          reg,
+          totalReg,
+          numOfPages,
+        },
+      });
+    } catch (error) {
+      logoutUser();
+    }
+    clearAlert();
+  };
+
+  const getRegistrationsTot = async () => {
+    let url = `/reg/total`;
+
+    dispatch({ type: GET_REGISTER_BEGIN });
+    try {
+      const { data } = await authFetch(url);
+      const { reg, totalReg, numOfPages } = data;
+      dispatch({
+        type: GET_REGISTER_SUCCESS,
+        payload: {
+          reg,
+          totalReg,
+          numOfPages,
+        },
+      });
+    } catch (error) {
+      logoutUser();
+    }
+    clearAlert();
+  };
+
+  const deleteRegistration = async (regId) => {
+    dispatch({ type: DELETE_REGISTER_BEGIN });
+    try {
+      await authFetch.delete(`/reg/${regId}`);
+      getRegistrations();
+    } catch (error) {
+      logoutUser();
+    }
+  };
+
+  const setEditRegistration = (id) => {
+    dispatch({ type: SET_EDIT_REGISTER, payload: { id } });
+  };
+
+  const editRegistration = async () => {
+    dispatch({ type: EDIT_REGISTER_BEGIN });
+    try {
+      const { name, type, university, address, phoneNr, birthdate, gender } =
+        state;
+
+      await authFetch.patch(`/reg/${state.editRegId}`, {
+        name,
+        type,
+        university,
+        address,
+        phoneNr,
+        birthdate,
+        gender,
+      });
+      dispatch({
+        type: EDIT_REGISTER_SUCCESS,
+      });
+      dispatch({ type: CLEAR_VALUES });
+    } catch (error) {
+      if (error.response.status === 401) return;
+      dispatch({
+        type: EDIT_REGISTER_ERROR,
+        payload: { msg: error.response.data.msg },
+      });
+    }
+    clearAlert();
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -353,6 +486,12 @@ const AppProvider = ({ children }) => {
         clearFilters,
         changePage,
         getCoursesTot,
+        createRegistration,
+        getRegistrations,
+        getRegistrationsTot,
+        setEditRegistration,
+        deleteRegistration,
+        editRegistration,
       }}
     >
       {children}

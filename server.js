@@ -18,6 +18,7 @@ import connectDB from './db/connect.js';
 //routers
 import authRoute from './routes/authRoute.js';
 import courseRoute from './routes/courseRoute.js';
+import regRoute from './routes/regRoute.js';
 
 // middleware
 import errorHandlerMiddleware from './middleware/error-handler.js';
@@ -37,9 +38,10 @@ app.use(mongoSanitize());
 
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/courses', authenticateUser, courseRoute);
+app.use('/api/v1/reg', authenticateUser, regRoute);
 
 app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, './client/build/static', 'index.html'));
+  res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
 
 app.use(notFoundMiddleware);

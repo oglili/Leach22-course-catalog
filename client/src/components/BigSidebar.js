@@ -1,9 +1,10 @@
 import { useAppContext } from '../context/appContext';
 import NavLinks from './NavLinks';
 import Wrapper from '../assets/wrappers/BigSidebar';
+import NavLinkUsers from './NavLinkUsers';
 
 const BigSidebar = () => {
-  const { showSidebar } = useAppContext();
+  const { user, showSidebar } = useAppContext();
   return (
     <Wrapper>
       <div
@@ -13,7 +14,7 @@ const BigSidebar = () => {
       >
         <div className='content'>
           <header></header>
-          <NavLinks />
+          {user.admin ? <NavLinks /> : <NavLinkUsers />}
         </div>
       </div>
     </Wrapper>
