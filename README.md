@@ -10,7 +10,7 @@
   <h3 align="center">Leach22 Course Catalog</h3>
 
   <p align="center">
-     Leach22 is a UN goal-based university training platform where you can Register/Log in to check the available courses that you can register for.
+     Leach22 is a UN goal-based university training platform where you can Register/Log in to check the available courses that can be registered for.
 </p>
 
   <br>
@@ -45,32 +45,29 @@
 ## About The Project
 In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses offered by the platform, updating and deleting any courses they register for. React.js was used to create the frontend user interface.
 
-### User Permissions
 ## User Permissions
 
-### Student
+### User
 
-A student can
+A user can
 
-* register himself on the app
+* register on the app
 * view and edit his profile
-* change his password
-* search for books and view availabilty
-* view his issue history
+* search for courses available
+* register for courses **available**
+* view, edit and delete courses registered for
 
 ### Admin
 
 An admin can
 
 * view and edit his profile
-* search for books and view availability
-* view, Edit or Delete existing books
-* add new books
-* issue a book to a student
-* return a book issued earlier
-* view all stats of the library
-* view issue log and the profile of all the students
-* view the profile of all admins 
+* add, edit and delete courses
+* search for courses available
+* register for courses **available**
+* view, edit and delete courses registered for
+* view courses registered for by all users
+
 
 ## A note to the viewers
 
@@ -127,12 +124,18 @@ REST API project section endpoints:
 - `POST /api/v1/auth/register` - To register a user.
 - `POST /api/v1/auth/login` - To login a registered user.
 - `PATCH /api/v1/auth/updateUser` - To update a user.
-- `GET /api/v1/courses` - Returns all courses of the current user.   
+- `GET /api/v1/courses` - Returns all courses for the admin.   
 - `GET /api/v1/courses/stats` - Returns all course showing statistics.
-- `GET /api/v1/courses/total` - Returns all courses.
+- `GET /api/v1/courses/total` - Returns all courses for the other users.
 - `POST /api/v1/courses` - Creates a course.
 - `PATCH /api/v1/courses/:id` - Updates a course specifying the id.
 - `DELETE /api/v1/courses/:id` - Deletes a course specifying the id.
+- `GET /api/v1/reg` - Returns the user registered courses.
+- `GET /api/v1/reg/total` - Returns all registered courses. 
+- `POST /api/v1/reg` - Registered for a course.
+- `PATCH /api/v1/reg/:id` - Updates a registered course specifying the id.
+- `DELETE /api/v1/reg/:id` - Deletes a registered course specifying the id.
+
 
 ### Test
 
@@ -142,7 +145,7 @@ REST API project section endpoints:
 
 - Open https://leach22-course-catalog.herokuapp.com/
 - Register/Login
-- Start adding, editing, deleting courses and viewing all courses in the piattaform.
+- Start adding or registering, editing, deleting courses and viewing all courses in the piattaform.
 
 <h3 align="center">Preview</h3>
 
