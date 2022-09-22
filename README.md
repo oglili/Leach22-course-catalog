@@ -10,7 +10,7 @@
   <h3 align="center">Leach22 Course Catalog</h3>
 
   <p align="center">
-     Leach22 is a UN goal-based training platform that will need to catalog the courses it will offer. 
+     Leach22 is a UN goal-based university training platform where you can Register/Log in to check the available courses that you can register for.
 </p>
 
   <br>
@@ -23,6 +23,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
+        <li><a href="#user-permissions">User Permissions</a></li>
         <li><a href="#some-technologies-used">Some Technologies Used</a></li>
       </ul>
     </li>
@@ -42,7 +43,43 @@
 </details>
 
 ## About The Project
-In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses, as well as adding, updating and deleting courses in the database and React to create the frontend user interface.
+In this project I created a RESTful JSON APIs using Express js, which provides a way for insertion of the courses offered by the platform into the database. Users can interact with the database by retrieving a list of courses offered by the platform, updating and deleting any courses they register for. React.js was used to create the frontend user interface.
+
+### User Permissions
+## User Permissions
+
+### Student
+
+A student can
+
+* register himself on the app
+* view and edit his profile
+* change his password
+* search for books and view availabilty
+* view his issue history
+
+### Admin
+
+An admin can
+
+* view and edit his profile
+* search for books and view availability
+* view, Edit or Delete existing books
+* add new books
+* issue a book to a student
+* return a book issued earlier
+* view all stats of the library
+* view issue log and the profile of all the students
+* view the profile of all admins 
+
+## A note to the viewers
+
+1. You can try logging in as an **admin** by entering the following credentials:
+
+* **email**: *lilian@gmail.com*
+* **password**: *secret*
+
+2. You can also register yourself as a student and then login to view the options available to a student.
 
 ### Some Technologies Used
 
